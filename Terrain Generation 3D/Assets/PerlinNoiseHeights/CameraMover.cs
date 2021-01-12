@@ -25,6 +25,7 @@ public class CameraMover : MonoBehaviour
         if (Input.GetMouseButton(0))//right click
         {
             canMove = true;
+            Cursor.visible = false;
         }
         /*        if (Input.GetMouseButton(1))//right click
                 {
@@ -40,10 +41,14 @@ public class CameraMover : MonoBehaviour
             if (Cursor.lockState == CursorLockMode.None)
             {
                 Cursor.lockState = CursorLockMode.Locked;
+                canMove = true;
+                Cursor.visible = false;
             }
             else
             {
                 Cursor.lockState = CursorLockMode.None;
+                canMove = false;
+                Cursor.visible = true;
             }
         }
     }
